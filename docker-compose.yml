@@ -8,4 +8,5 @@ services:
       - redis
   redis:
     image: "redis:alpine"
-#  nginx:
+  nginx:
+    image: "nginx:alpine"
