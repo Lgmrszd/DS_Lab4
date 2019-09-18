@@ -9,6 +9,8 @@ services:
   redis:
     image: "redis:alpine"
   nginx:
+    volumes:
+        - ./nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - "8040:8040"
     image: "nginx:alpine"
