@@ -2,11 +2,13 @@ version: '3.3'
 services:
   web:
     build: .
-    ports:
-      - "8000:8000"
+#    ports:
+#      - "8000:8000"
     depends_on:
       - redis
   redis:
     image: "redis:alpine"
   nginx:
+    ports:
+      - "8040:8040"
     image: "nginx:alpine"
