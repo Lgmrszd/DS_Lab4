@@ -4,9 +4,6 @@ import redis
 from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
-app.add_url_rule('/favicon.ico',
-                 redirect_to=url_for('static', filename='favicon.ico'))
-
 
 cache = redis.Redis(host='redis', port=6379)
 
@@ -26,7 +23,7 @@ def get_visit_counts():
 @app.route('/')
 def index():
     visit_counts = get_visit_counts()
-    return render_template("index.html", visit_counts=0)
+    return render_template("index.html", visit_counts=visit_counts)
 
 
 if __name__ == '__main__':
