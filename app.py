@@ -26,7 +26,7 @@ def get_visit_counts():
 @app.route('/')
 def index():
     visit_counts = get_visit_counts()
-    return render_template("index.html", visit_counts=visit_counts)
+    return render_template("index.html", visit_counts=0)
 
 
 if __name__ == '__main__':
