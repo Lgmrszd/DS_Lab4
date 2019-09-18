@@ -22,9 +22,18 @@
     <h1>You've got Rick Roll'ed!</h1>
     <h2>Oh boyo, I can't believe this happen to you</h2>
     <h3>Happy <strong>{{ visit_counts }} visitors</strong> got RickRolled too!</h3>
-    <h4>Do not worry, here's some cat pics for ya:</h4>
-{#    <div id="spoiler" style="display:none">#}
-{#	</div>#}
+    <h4>Do not worry, here's some cat pics for ya, they're hiding behind this button:</h4>
+    <input id="spoiler_button" type="button" value="What are you waiting for???" onclick=
+            "if(document.getElementById('spoiler') .style.display==='none') {
+                document.getElementById('spoiler') .style.display='';
+                document.getElementById('spoiler_button').value='Oh no!!!'
+            } else {
+                document.getElementById('spoiler_button').value='There is no coming back'
+            }"/>
+    <div id="spoiler" style="display:none">
+        <h3>You've just got Rick Rolled. Again!</h3>
+        <img src="/static/RickAstley.png"/>
+	</div>
 </main>
 </body>
 </html>
