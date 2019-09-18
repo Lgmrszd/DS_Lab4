@@ -1,9 +1,13 @@
 import time
 
 import redis
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
+app.add_url_rule('/favicon.ico',
+                 redirect_to=url_for('static', filename='favicon.ico'))
+
+
 cache = redis.Redis(host='redis', port=6379)
 
 
